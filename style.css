@@ -1,0 +1,71 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #dbe4ea; /* Light frosty blue fallback */
+}
+
+/* 3D Canvas Container */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* UI Overlay Layer */
+.ui-layer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Let clicks pass through to 3D if needed */
+}
+
+/* Center Brand Text */
+h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 3vw;
+    color: #1a1a1a;
+    margin-left: 3vw; /* Offset for the last letter spacing to stay perfectly centered */
+    text-transform: uppercase;
+}
+
+/* Scroll Down Indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5rem;
+    color: #444;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-5px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2vw;
+    }
+}
